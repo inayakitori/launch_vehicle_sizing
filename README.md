@@ -15,11 +15,17 @@ What to find:
 
 ## Proposed approach
 Modelling the problem as a minimisation problem for a set number of stages. Finding what launch vehicles and SRMS would work best with a set number of stages. create a function:
+
   payload_fraction(stages_used, proportion_dv_each_stage)
+  
 where:
+
   stages_used: array of (v_exhaust, structural_mass_fraction)
+  
   proportion_dv_each_stage: array of floats from 0 to 1
+  
 the sum of proportions will be 1.
+
 and then find the values of proportion_dv_each_stage that minimise payload_fraction
 
 ## Completion timeline
