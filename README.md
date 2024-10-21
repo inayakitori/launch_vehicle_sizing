@@ -39,3 +39,6 @@ Mon 21st Oct reflection/celebration (in here)
 
 ## Reflection
 This is where overall challenges and general stuff will be logged.
+
+## References
+engine database: https://planet4589.org/space/gcat/web/lvs/engines/index.html

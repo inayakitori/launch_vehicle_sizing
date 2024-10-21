@@ -28,8 +28,8 @@ def partition(lista,bins):
     
 engine_count_combinations = partition(range(1,7), 4)
 engine_count_combinations = [[1] + [len(i) for i in combination] for combination in engine_count_combinations]
-engine_count_combinations = [tuple([count * multiplier for multiplier, count in zip([1, 1, 1, 1, 1], combination)]) for combination in engine_count_combinations]
-max_engines_per_stage = [1, 5, 5, 5, 5]
+engine_count_combinations = [tuple([count * multiplier for multiplier, count in zip([1, 1, 2, 2, 4], combination)]) for combination in engine_count_combinations]
+max_engines_per_stage = [1, 1, 4, 8, 16]
 engine_count_combinations = list(filter(lambda count_combination: \
                                    all(engine_count <= max_engine_count for engine_count, max_engine_count in zip(count_combination, max_engines_per_stage)) \
                                     , engine_count_combinations))
@@ -51,7 +51,7 @@ engines_per_stage.append([Engine.payload(payload_mass)])
 engines_per_stage.append(list(filter(lambda e: "LOX" in e.group or "NTO" in e.group or "Hybrid" in e.group or e.group == "EP" or e.group == "None", engines)))
 engines_per_stage.append(list(filter(lambda e: "LOX" in e.group or "NTO" in e.group or "Hybrid" in e.group, engines)))
 engines_per_stage.append(list(filter(lambda e: e.group == "Solid" or "LOX" in e.group or "NTO" in e.group or "Hybrid" in e.group, engines)))
-engines_per_stage.append(list(filter(lambda e: e.group == "Solid", engines)))
+# engines_per_stage.append(list(filter(lambda e: e.group == "Solid", engines)))
 engines_per_stage.append(list(filter(lambda e: e.group == "Solid" or e.group == "None", engines)))
 
 staging_infos = engines_per_stage
